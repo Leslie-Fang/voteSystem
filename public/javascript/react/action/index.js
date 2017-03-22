@@ -78,3 +78,27 @@ export const submitSelectItem = (itemid) => {
         }))
     }
 };
+
+export const queryResult = () => {
+    console.log("Query result!");
+  //  console.log(itemid);
+    return {
+        type: 'QUERY_RESULT_INIT',
+        payload: ($.ajax({
+            method: "POST",
+            data: {type: 'query_data_result'},
+            url: "/queryresult",
+            dataType: "json"
+        }).then(function(data){
+            console.log(data);
+            console.log('back in ajax!');
+            const action = {
+                type: 'QUERY_RESULT_FINISH',
+                state: 'finishFetchingdata',
+                payload: data
+            };
+            store.dispatch(action);
+            return data;
+        }))
+    }
+};

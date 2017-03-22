@@ -54,8 +54,8 @@ var Container1 = function (_React$Component) {
         value: function handleSubmit(event) {
             event.preventDefault();
             var codedata = this.state.value;
-            if (/.*[\u4e00-\u9fa5]+.*$/.test(codedata)) {
-                alert("验证码中不能含有汉字！");
+            if (!/^[A-Za-z0-9]+$/.test(codedata)) {
+                alert("只能含有数字有字母!");
                 return false;
             }
             //alert("不能含有汉字！");

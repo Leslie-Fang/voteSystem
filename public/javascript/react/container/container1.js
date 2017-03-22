@@ -28,9 +28,9 @@ class Container1 extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         var codedata = this.state.value;
-        if(/.*[\u4e00-\u9fa5]+.*$/.test(codedata))
+        if(!/^[A-Za-z0-9]+$/.test(codedata))
         {
-            alert("验证码中不能含有汉字！");
+            alert("只能含有数字有字母!");
             return false;
         }
         //alert("不能含有汉字！");

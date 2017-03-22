@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.submitSelectItem = exports.changeItem = exports.submitData = exports.selectUser = undefined;
+exports.queryResult = exports.submitSelectItem = exports.changeItem = exports.submitData = exports.selectUser = undefined;
 
 var _jquery = require("jquery");
 
@@ -78,6 +78,30 @@ var submitSelectItem = exports.submitSelectItem = function submitSelectItem(item
             console.log('back in ajax!');
             var action = {
                 type: 'INESERT_SUCCESS',
+                state: 'finishFetchingdata',
+                payload: data
+            };
+            _store.store.dispatch(action);
+            return data;
+        })
+    };
+};
+
+var queryResult = exports.queryResult = function queryResult() {
+    console.log("Query result!");
+    //  console.log(itemid);
+    return {
+        type: 'QUERY_RESULT_INIT',
+        payload: _jquery2.default.ajax({
+            method: "POST",
+            data: { type: 'query_data_result' },
+            url: "/queryresult",
+            dataType: "json"
+        }).then(function (data) {
+            console.log(data);
+            console.log('back in ajax!');
+            var action = {
+                type: 'QUERY_RESULT_FINISH',
                 state: 'finishFetchingdata',
                 payload: data
             };
