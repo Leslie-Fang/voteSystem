@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 115);
+/******/ 	return __webpack_require__(__webpack_require__.s = 116);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -16939,7 +16939,8 @@ var showItems = exports.showItems = function showItems() {
 /* 84 */,
 /* 85 */,
 /* 86 */,
-/* 87 */
+/* 87 */,
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16965,72 +16966,42 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function mapStateToProps(state) {
     return {
-        items: state.items
+        voteResults: state.voteResults,
+        showItems: state.showItems
     };
 }
 
 function matchDispatchToProps(dispatch) {
-    return (0, _redux.bindActionCreators)({ changeItem: _index.changeItem, submitSelectItem: _index.submitSelectItem, submitTureItem: _index.submitTureItem }, dispatch);
+    return (0, _redux.bindActionCreators)({ queryResult: _index.queryResult }, dispatch);
 }
 
-var Container2 = function (_React$Component) {
-    _inherits(Container2, _React$Component);
+var Container3 = function (_React$Component) {
+    _inherits(Container3, _React$Component);
 
-    function Container2(props) {
-        _classCallCheck(this, Container2);
+    function Container3(props) {
+        _classCallCheck(this, Container3);
 
-        var _this = _possibleConstructorReturn(this, (Container2.__proto__ || Object.getPrototypeOf(Container2)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Container3.__proto__ || Object.getPrototypeOf(Container3)).call(this, props));
 
-        var myitems = _this.props.items.filter(function (item) {
-            return item.initChecked !== false;
-        });
-        _this.state = { select: myitems[0].id };
-        _this.handleChange = _this.handleChange.bind(_this);
-        _this.handleSubmit = _this.handleSubmit.bind(_this);
+        _this.props.queryResult();
         return _this;
     }
 
-    _createClass(Container2, [{
-        key: 'handleChange',
-        value: function handleChange(event) {
-            console.log(event.target.checked);
-            console.log(event.target.id);
-            this.setState({ select: event.target.id }, function () {
-                console.log(this.state.select);
-                // this.props.changeItem(this.state.select);
-            });
-            //this.props.changeItem();
-        }
-    }, {
-        key: 'handleSubmit',
-        value: function handleSubmit(event) {
-            event.preventDefault();
-            console.log('submit');
-            //var dta = {selectItem : this.state.select};
-            var dta = this.state.select;
-            console.log(dta);
-            (0, _index.submitSelectItem)(dta, function (result) {
-                console.log(result);
-                if (result.queryVoted == 'fail') {
-                    console.log('Ready to submit data!');
-                    (0, _index.submitTureItem)(dta);
-                } else {
-                    alert('Already Voted!');
-                }
-            });
-        }
-    }, {
+    _createClass(Container3, [{
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
             return React.createElement(
                 'div',
                 null,
                 React.createElement(
+                    'h3',
+                    null,
+                    '\u7269\u54C1\u548C\u7F16\u53F7:'
+                ),
+                React.createElement(
                     'ul',
-                    { className: 'list-unstyled' },
-                    this.props.items.map(function (item, i) {
+                    null,
+                    this.props.showItems.map(function (item) {
                         return React.createElement(
                             'div',
                             null,
@@ -17039,44 +17010,62 @@ var Container2 = function (_React$Component) {
                                 { key: item.id },
                                 React.createElement(
                                     'div',
-                                    { className: 'radio' },
+                                    null,
                                     React.createElement(
                                         'label',
                                         null,
-                                        React.createElement('input', { type: 'radio', name: 'radio', id: item.id, index: item.id, defaultChecked: item.initChecked, onChange: _this2.handleChange }),
+                                        item.id,
                                         ' ',
                                         item.name
                                     )
-                                ),
-                                React.createElement('img', { src: item.link, className: 'img-responsive', alt: 'Logo' }),
-                                React.createElement('br', null),
-                                React.createElement('br', null)
+                                )
                             )
                         );
                     })
                 ),
+                React.createElement('br', null),
+                React.createElement('br', null),
                 React.createElement(
-                    'div',
-                    { className: 'text-center' },
-                    React.createElement(
-                        'button',
-                        { className: 'btn btn-primary', onClick: this.handleSubmit },
-                        '\u63D0\u4EA4'
-                    )
+                    'h3',
+                    null,
+                    '\u5F97\u7968\u6570\u91CF:'
+                ),
+                React.createElement(
+                    'ul',
+                    null,
+                    this.props.voteResults.map(function (item) {
+                        return React.createElement(
+                            'div',
+                            null,
+                            React.createElement(
+                                'li',
+                                null,
+                                React.createElement(
+                                    'div',
+                                    null,
+                                    React.createElement(
+                                        'label',
+                                        null,
+                                        '\u9009\u9879: ',
+                                        item.voteNumber,
+                                        ' \u5F97\u7968\u6570\u91CF: ',
+                                        item.count
+                                    )
+                                )
+                            )
+                        );
+                    })
                 )
             );
         }
     }]);
 
-    return Container2;
+    return Container3;
 }(React.Component);
 
-//store.dispatch({ type: 'INCREMENT' });
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, matchDispatchToProps)(Container2);
+exports.default = (0, _reactRedux.connect)(mapStateToProps, matchDispatchToProps)(Container3);
 
 /***/ }),
-/* 88 */,
 /* 89 */,
 /* 90 */,
 /* 91 */,
@@ -17103,7 +17092,8 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, matchDispatchToProps
 /* 112 */,
 /* 113 */,
 /* 114 */,
-/* 115 */
+/* 115 */,
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17120,7 +17110,7 @@ var _reactRedux = __webpack_require__(20);
 
 var _store = __webpack_require__(21);
 
-var _container = __webpack_require__(87);
+var _container = __webpack_require__(88);
 
 var _container2 = _interopRequireDefault(_container);
 
@@ -17150,18 +17140,7 @@ var Component1 = exports.Component1 = function (_React$Component) {
                 React.createElement(
                     "h1",
                     { className: "text-center" },
-                    "\u4F60\u6700\u559C\u7231\u7684\u4E1C\u897F"
-                ),
-                React.createElement(
-                    "h5",
-                    null,
-                    "\u8BF7\u9009\u62E9",
-                    React.createElement(
-                        "strong",
-                        null,
-                        "\u4E00\u6837"
-                    ),
-                    "\u4F60\u6700\u559C\u6B22\u7684\u4E1C\u897F"
+                    "\u6295\u7968\u7ED3\u679C"
                 ),
                 React.createElement("br", null)
             );

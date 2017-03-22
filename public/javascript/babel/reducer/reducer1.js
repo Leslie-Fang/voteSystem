@@ -46,6 +46,8 @@ var totalItems = [{
     initChecked: false
 }];
 
+var queryResult = [];
+
 var reducer1 = exports.reducer1 = function reducer1() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : userData;
     var action = arguments[1];
@@ -97,6 +99,34 @@ var items = exports.items = function items() {
             return Object.assign({}, action.payload);
         default:
             console.log('Init items!');
+            return state;
+    }
+};
+
+var voteResults = exports.voteResults = function voteResults() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : queryResult;
+    var action = arguments[1];
+
+    switch (action.type) {
+        case 'QUERY_RESULT_INIT':
+            return state;
+        case 'QUERY_RESULT_FINISH':
+            return action.payload;
+        default:
+            console.log('Init query results!');
+            return state;
+    }
+};
+
+var showItems = exports.showItems = function showItems() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : totalItems;
+    var action = arguments[1];
+
+    switch (action.type) {
+        case 'ABB':
+            return state;
+        default:
+            console.log('Init show items!');
             return state;
     }
 };

@@ -25,7 +25,7 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch) {
-    return (0, _redux.bindActionCreators)({ changeItem: _index.changeItem, submitSelectItem: _index.submitSelectItem }, dispatch);
+    return (0, _redux.bindActionCreators)({ changeItem: _index.changeItem, submitSelectItem: _index.submitSelectItem, submitTureItem: _index.submitTureItem }, dispatch);
 }
 
 var Container2 = function (_React$Component) {
@@ -64,7 +64,15 @@ var Container2 = function (_React$Component) {
             //var dta = {selectItem : this.state.select};
             var dta = this.state.select;
             console.log(dta);
-            (0, _index.submitSelectItem)(dta);
+            (0, _index.submitSelectItem)(dta, function (result) {
+                console.log(result);
+                if (result.queryVoted == 'fail') {
+                    console.log('Ready to submit data!');
+                    (0, _index.submitTureItem)(dta);
+                } else {
+                    alert('Already Voted!');
+                }
+            });
         }
     }, {
         key: 'render',

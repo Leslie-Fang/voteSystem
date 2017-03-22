@@ -52,6 +52,8 @@ var totalItems=[
 
 ];
 
+var queryResult =[];
+
 export var reducer1 = function(state = userData,action){
 
     switch (action.type) {
@@ -101,4 +103,28 @@ export var items = function(state = totalItems,action){
             console.log('Init items!');
             return state;
     }
+};
+
+export var voteResults= function(state = queryResult,action){
+    switch (action.type) {
+        case 'QUERY_RESULT_INIT':
+            return state;
+        case 'QUERY_RESULT_FINISH':
+            return action.payload;
+        default:
+            console.log('Init query results!');
+            return state;
+    }
+
+};
+
+export var showItems= function(state = totalItems,action){
+    switch (action.type) {
+        case 'ABB':
+            return state;
+        default:
+            console.log('Init show items!');
+            return state;
+    }
+
 };
