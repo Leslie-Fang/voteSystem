@@ -55,7 +55,7 @@ export const changeItem = (itemid) => {
     }
 };
 
-export const submitSelectItem = (itemid) => {
+export const submitSelectItem = (itemid,callback) => {
     console.log("change select item ");
     console.log(itemid);
     return {
@@ -63,21 +63,41 @@ export const submitSelectItem = (itemid) => {
         payload: ($.ajax({
             method: "POST",
             data: {selectItem: itemid},
-            url: "/submitItem",
+            url: "/queryvotedornot",
             dataType: "json"
         }).then(function(data){
+            console.log('AAAAAAAuouo');
             console.log(data);
-            console.log('back in ajax!');
-            const action = {
-                type: 'INESERT_SUCCESS',
-                state: 'finishFetchingdata',
-                payload: data
-            };
-            store.dispatch(action);
+            callback(data);
             return data;
         }))
     }
 };
+export const submitTureItem=(itemid)=>{
+    console.log("change select item ");
+    console.log(itemid);
+    return {
+        type: 'SUBMIT_TRUE_ITEM',
+        payload: ($.ajax({
+             method: "POST",
+             data: {selectItem: itemid},
+             url: "/submitItem",
+             dataType: "json"
+        }).then(function(data){
+             console.log(data);
+             console.log('back in ajax!');
+             const action = {
+             type: 'INESERT_SUCCESS',
+             state: 'finishFetchingdata',
+             payload: data
+             };
+             store.dispatch(action);
+             return data;
+        }))
+    }
+
+}
+
 
 export const queryResult = () => {
     console.log("Query result!");
@@ -102,3 +122,5 @@ export const queryResult = () => {
         }))
     }
 };
+
+

@@ -51,9 +51,6 @@ class Container3 extends React.Component {
                         </div>
                     )})}
                 </ul>
-                <div className="text-center">
-                    <button className="btn btn-primary">提交</button>
-                </div>
             </div>
         );
     }

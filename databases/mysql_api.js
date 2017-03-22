@@ -54,12 +54,33 @@ exports.insertSelectItem=function(req, data,res,callback){
         if (err) {throw err;}
         else{
             console.log(result);
-            res.cookie('voted', 1, {maxAge: 60*60*1000});
+           // res.cookie('voted', 1, {maxAge: 60*60*1000});
             callback({insert:'success'});
         }
     });
     connection.end();
 
+};
+
+
+exports.queryVotedornot=function(req, data,res,callback){
+    var connection = mysql.createConnection(config);
+    connection.connect();
+    var user = req.cookies.user;
+    connection.query('select * from VOTEDATA where user = ?',user, function(err, result) {
+        if (err) {throw err;}
+        console.log('UUUHHHHH');
+        console.log(result);
+        if(result.length === 0) {
+            //the user hasn't voted
+            callback({queryVoted:'fail'});
+        }
+        else{
+            //the user has already voted
+            callback({queryVoted:'success'});
+        }
+    });
+    connection.end();
 };
 
 exports.queryResult=function(req, data,res,callback){
@@ -78,6 +99,6 @@ exports.queryResult=function(req, data,res,callback){
     });
     connection.end();
 
-}
+};
 
 

@@ -16640,7 +16640,7 @@ module.exports = function(module) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.queryResult = exports.submitSelectItem = exports.changeItem = exports.submitData = exports.selectUser = undefined;
+exports.queryResult = exports.submitTureItem = exports.submitSelectItem = exports.changeItem = exports.submitData = exports.selectUser = undefined;
 
 var _jquery = __webpack_require__(36);
 
@@ -16700,11 +16700,29 @@ var changeItem = exports.changeItem = function changeItem(itemid) {
     };
 };
 
-var submitSelectItem = exports.submitSelectItem = function submitSelectItem(itemid) {
+var submitSelectItem = exports.submitSelectItem = function submitSelectItem(itemid, callback) {
     console.log("change select item ");
     console.log(itemid);
     return {
         type: 'SUBMIT_SELECT_ITEM',
+        payload: _jquery2.default.ajax({
+            method: "POST",
+            data: { selectItem: itemid },
+            url: "/queryvotedornot",
+            dataType: "json"
+        }).then(function (data) {
+            console.log('AAAAAAAuouo');
+            console.log(data);
+            callback(data);
+            return data;
+        })
+    };
+};
+var submitTureItem = exports.submitTureItem = function submitTureItem(itemid) {
+    console.log("change select item ");
+    console.log(itemid);
+    return {
+        type: 'SUBMIT_TRUE_ITEM',
         payload: _jquery2.default.ajax({
             method: "POST",
             data: { selectItem: itemid },
@@ -17037,15 +17055,6 @@ var Container3 = function (_React$Component) {
                             )
                         );
                     })
-                ),
-                React.createElement(
-                    'div',
-                    { className: 'text-center' },
-                    React.createElement(
-                        'button',
-                        { className: 'btn btn-primary' },
-                        '\u63D0\u4EA4'
-                    )
                 )
             );
         }

@@ -109,15 +109,6 @@ var Container3 = function (_React$Component) {
                             )
                         );
                     })
-                ),
-                React.createElement(
-                    'div',
-                    { className: 'text-center' },
-                    React.createElement(
-                        'button',
-                        { className: 'btn btn-primary' },
-                        '\u63D0\u4EA4'
-                    )
                 )
             );
         }

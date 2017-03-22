@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {changeItem,submitSelectItem} from '../../babel/action/index.js';
+import {changeItem,submitSelectItem,submitTureItem} from '../../babel/action/index.js';
 
 function mapStateToProps(state) {
     return ({
@@ -10,7 +10,7 @@ function mapStateToProps(state) {
 
 
 function matchDispatchToProps(dispatch){
-    return bindActionCreators({changeItem:changeItem,submitSelectItem:submitSelectItem}, dispatch);
+    return bindActionCreators({changeItem:changeItem,submitSelectItem:submitSelectItem,submitTureItem: submitTureItem}, dispatch);
 }
 
 class Container2 extends React.Component {
@@ -40,7 +40,15 @@ class Container2 extends React.Component {
         //var dta = {selectItem : this.state.select};
         var dta = this.state.select;
         console.log(dta );
-        submitSelectItem(dta);
+        submitSelectItem(dta,function(result){
+            console.log(result);
+            if(result.queryVoted == 'fail'){
+                console.log('Ready to submit data!');
+                submitTureItem(dta);
+            }else{
+                alert('Already Voted!');
+            }
+        });
     }
 
     render() {

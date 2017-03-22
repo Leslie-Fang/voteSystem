@@ -10,19 +10,19 @@ router.get('/',function(req,res){
 });
 
 router.use('/voter',function(req,res,next){
-   if(req.cookies.voted)
+  /* if(req.cookies.voted)
     {
         console.log('Already voted!');
         console.log(req.cookies.voted);
         res.redirect('/');
-    }
-    else if(!req.cookies.islogin){
-       console.log('Not login!');
-       console.log(req.cookies.islogin);
-       res.redirect('/');
+    }*/
+    if(req.cookies.islogin == 1){
+        next();
     }
     else{
-        next();
+        console.log('Not login!');
+        console.log(req.cookies.islogin);
+        res.redirect('/');
     }
 });
 
@@ -75,6 +75,18 @@ router.post('/submitItem', function(req, res) {
     });
 });
 
+
+router.post('/queryvotedornot', function(req, res) {
+    console.log(req.param('selectItem'));
+    var data = req.param('selectItem');
+    my.queryVotedornot(req,data,res,function(queryData){
+        console.log(queryData);
+        console.log('In callback!');
+        return res.send(queryData);
+    });
+});
+
+
 router.post('/queryresult', function(req, res) {
     console.log(req.param('type'));
     var data = req.param('type');
@@ -84,7 +96,6 @@ router.post('/queryresult', function(req, res) {
         return res.send(queryData);
     });
 });
-
 
 router.use('/user',user);
 
