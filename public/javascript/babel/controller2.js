@@ -37,7 +37,7 @@ var Component1 = exports.Component1 = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 "div",
-                { className: ".container-fluid" },
+                null,
                 React.createElement(
                     "h1",
                     { className: "text-center" },
@@ -81,7 +81,7 @@ var Board = function (_React$Component2) {
                 { store: _store.store },
                 React.createElement(
                     "div",
-                    null,
+                    { className: "container" },
                     React.createElement(Component1, null),
                     React.createElement(_container2.default, null)
                 )

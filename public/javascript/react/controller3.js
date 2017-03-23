@@ -9,7 +9,7 @@ export class Component1 extends React.Component {
 
     render() {
         return (
-            <div className=".container-fluid">
+            <div>
                 <h1 className = "text-center">投票结果</h1>
                 <br/>
             </div>
@@ -25,7 +25,7 @@ class Board extends React.Component{
     render() {
         return (
             <Provider store={store}>
-                <div>
+                <div className="container">
                     <Component1 />
                     <Container3 />
                 </div>

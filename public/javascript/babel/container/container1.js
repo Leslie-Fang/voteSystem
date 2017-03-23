@@ -36,9 +36,10 @@ var Container1 = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Container1.__proto__ || Object.getPrototypeOf(Container1)).call(this, props));
 
-        _this.state = { value: "请输入验证码" };
+        _this.state = { value: "请输入验证码", defaultValue: "请输入验证码" };
         _this.handleChange = _this.handleChange.bind(_this);
         _this.handleSubmit = _this.handleSubmit.bind(_this);
+        _this.handleFocus = _this.handleFocus.bind(_this);
         return _this;
     }
 
@@ -63,6 +64,12 @@ var Container1 = function (_React$Component) {
             //return true;
         }
     }, {
+        key: 'handleFocus',
+        value: function handleFocus(event) {
+            // console.log('Onfocus');
+            this.setState({ value: "" });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return React.createElement(
@@ -83,7 +90,7 @@ var Container1 = function (_React$Component) {
                         React.createElement('input', { type: 'text', className: 'form-control', id: 'exampleInputPassword1',
                             ref: 'verify',
                             value: this.state.value, onChange: this.handleChange,
-                            placeholder: this.state.value })
+                            placeHolder: this.state.defaultValue, onFocus: this.handleFocus })
                     ),
                     React.createElement(
                         'button',
