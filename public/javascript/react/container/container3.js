@@ -22,35 +22,39 @@ class Container3 extends React.Component {
     render() {
         return(
             <div>
-                <h3>物品和编号:</h3>
-                <ul>
-                    {this.props.showItems.map((item)=>{return(
-                        <div>
-                            <li key={item.id} >
-                                <div>
-                                    <label>
-                                         {item.id} {item.name}
-                                    </label>
-                                </div>
-                            </li>
-                        </div>
-                    )})}
-                </ul>
+                <h3 className = "text-center">物品和编号</h3>
+                <div>
+                    <ul>
+                        {this.props.showItems.map((item)=>{return(
+                            <div>
+                                <li key={item.id} >
+                                    <div>
+                                        <label>
+                                             {item.id} {item.name}
+                                        </label>
+                                    </div>
+                                </li>
+                            </div>
+                        )})}
+                    </ul>
+                </div>
                 <br/><br/>
-                <h3>得票数量:</h3>
-                <ul>
-                    {this.props.voteResults.map((item)=>{return(
-                        <div>
-                            <li>
-                                <div>
-                                    <label>
-                                        选项: {item.voteNumber} 得票数量: {item.count}
-                                    </label>
-                                </div>
-                            </li>
-                        </div>
-                    )})}
-                </ul>
+                <h3 className = "text-center">得票数量</h3>
+                <div>
+                    <ul>
+                        {this.props.voteResults.map((item)=>{return(
+                            <div>
+                                <li>
+                                    <div>
+                                        <label>
+                                            选项: {item.voteNumber} 得票数量: {item.count}
+                                        </label>
+                                    </div>
+                                </li>
+                            </div>
+                        )})}
+                    </ul>
+                </div>
             </div>
         );
     }

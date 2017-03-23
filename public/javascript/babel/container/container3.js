@@ -49,66 +49,74 @@ var Container3 = function (_React$Component) {
                 null,
                 React.createElement(
                     'h3',
-                    null,
-                    '\u7269\u54C1\u548C\u7F16\u53F7:'
+                    { className: 'text-center' },
+                    '\u7269\u54C1\u548C\u7F16\u53F7'
                 ),
                 React.createElement(
-                    'ul',
+                    'div',
                     null,
-                    this.props.showItems.map(function (item) {
-                        return React.createElement(
-                            'div',
-                            null,
-                            React.createElement(
-                                'li',
-                                { key: item.id },
+                    React.createElement(
+                        'ul',
+                        null,
+                        this.props.showItems.map(function (item) {
+                            return React.createElement(
+                                'div',
+                                null,
                                 React.createElement(
-                                    'div',
-                                    null,
+                                    'li',
+                                    { key: item.id },
                                     React.createElement(
-                                        'label',
+                                        'div',
                                         null,
-                                        item.id,
-                                        ' ',
-                                        item.name
+                                        React.createElement(
+                                            'label',
+                                            null,
+                                            item.id,
+                                            ' ',
+                                            item.name
+                                        )
                                     )
                                 )
-                            )
-                        );
-                    })
+                            );
+                        })
+                    )
                 ),
                 React.createElement('br', null),
                 React.createElement('br', null),
                 React.createElement(
                     'h3',
-                    null,
-                    '\u5F97\u7968\u6570\u91CF:'
+                    { className: 'text-center' },
+                    '\u5F97\u7968\u6570\u91CF'
                 ),
                 React.createElement(
-                    'ul',
+                    'div',
                     null,
-                    this.props.voteResults.map(function (item) {
-                        return React.createElement(
-                            'div',
-                            null,
-                            React.createElement(
-                                'li',
+                    React.createElement(
+                        'ul',
+                        null,
+                        this.props.voteResults.map(function (item) {
+                            return React.createElement(
+                                'div',
                                 null,
                                 React.createElement(
-                                    'div',
+                                    'li',
                                     null,
                                     React.createElement(
-                                        'label',
+                                        'div',
                                         null,
-                                        '\u9009\u9879: ',
-                                        item.voteNumber,
-                                        ' \u5F97\u7968\u6570\u91CF: ',
-                                        item.count
+                                        React.createElement(
+                                            'label',
+                                            null,
+                                            '\u9009\u9879: ',
+                                            item.voteNumber,
+                                            ' \u5F97\u7968\u6570\u91CF: ',
+                                            item.count
+                                        )
                                     )
                                 )
-                            )
-                        );
-                    })
+                            );
+                        })
+                    )
                 )
             );
         }

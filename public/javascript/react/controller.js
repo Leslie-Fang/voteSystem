@@ -15,7 +15,7 @@ export class Component1 extends React.Component {
 
     render() {
         return (
-            <div className=".container-fluid">
+            <div>
                 <h1 className = "text-center">投票</h1>
                 <img src="../../images/logo.png" className="img-responsive" alt="Logo"/>
             </div>
@@ -30,7 +30,7 @@ class Board extends React.Component{
     render() {
         return (
             <Provider store={store}>
-                <div>
+                <div className="container">
                     <Component1 />
                     <Container1 />
                 </div>

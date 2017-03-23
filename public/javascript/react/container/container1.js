@@ -16,9 +16,10 @@ function matchDispatchToProps(dispatch){
 class Container1 extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: "请输入验证码"};
+        this.state = {value: "请输入验证码",defaultValue: "请输入验证码"};
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFocus = this.handleFocus.bind(this);
     }
     handleChange(event) {
         this.setState({value: event.target.value});
@@ -37,6 +38,10 @@ class Container1 extends React.Component {
         this.props.submitData(this.state.value);
         //return true;
     }
+    handleFocus(event){
+       // console.log('Onfocus');
+        this.setState({value: ""});
+    }
     render() {
         return(
             <div>
@@ -46,7 +51,7 @@ class Container1 extends React.Component {
                         <input type="text" className="form-control" id="exampleInputPassword1"
                                ref="verify"
                                value={this.state.value} onChange={this.handleChange}
-                               placeholder={this.state.value}/>
+                               placeHolder={this.state.defaultValue} onFocus={this.handleFocus}/>
                     </div>
                     <button type="submit" className="btn btn-primary">登入</button>
                 </form>
