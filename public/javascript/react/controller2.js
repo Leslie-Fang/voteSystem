@@ -10,8 +10,7 @@ export class Component1 extends React.Component {
     render() {
         return (
             <div>
-                <h1 className = "text-center">你最喜爱的东西</h1>
-                <h5 >请选择<strong>一样</strong>你最喜欢的东西</h5>
+                <h1 className = "text-center">投票通道</h1>
                 <br/>
             </div>
         );

@@ -41,18 +41,7 @@ var Component1 = exports.Component1 = function (_React$Component) {
                 React.createElement(
                     "h1",
                     { className: "text-center" },
-                    "\u4F60\u6700\u559C\u7231\u7684\u4E1C\u897F"
-                ),
-                React.createElement(
-                    "h5",
-                    null,
-                    "\u8BF7\u9009\u62E9",
-                    React.createElement(
-                        "strong",
-                        null,
-                        "\u4E00\u6837"
-                    ),
-                    "\u4F60\u6700\u559C\u6B22\u7684\u4E1C\u897F"
+                    "\u6295\u7968\u901A\u9053"
                 ),
                 React.createElement("br", null)
             );

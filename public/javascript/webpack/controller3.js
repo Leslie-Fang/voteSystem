@@ -16814,33 +16814,33 @@ var userData = [{
 
 var totalItems = [{
     id: 1,
-    name: 'apple',
-    link: "../../../images/apple.jpeg",
+    name: '红',
+    link: "../../../images/red.png",
     initChecked: true
 }, {
     id: 2,
-    name: 'banana',
-    link: "../../../images/banana.jpeg",
+    name: '橙',
+    link: "../../../images/oragon.png",
     initChecked: false
 }, {
     id: 3,
-    name: 'grape',
-    link: "../../../images/grape.jpeg",
+    name: '黄',
+    link: "../../../images/yellow.png",
     initChecked: false
 }, {
     id: 4,
-    name: 'origin',
-    link: "../../../images/origin.jpeg",
+    name: '绿',
+    link: "../../../images/green.png",
     initChecked: false
 }, {
     id: 5,
-    name: 'watermelon',
-    link: "../../../images/watermelon.jpeg",
+    name: '蓝',
+    link: "../../../images/blue.png",
     initChecked: false
 }, {
     id: 6,
-    name: 'pineapple',
-    link: "../../../images/pineapple.jpeg",
+    name: '紫',
+    link: "../../../images/zi.png",
     initChecked: false
 }];
 
@@ -16994,53 +16994,30 @@ var Container3 = function (_React$Component) {
                 'div',
                 null,
                 React.createElement(
-                    'h3',
-                    { className: 'text-center' },
-                    '\u7269\u54C1\u548C\u7F16\u53F7'
-                ),
-                React.createElement(
-                    'div',
-                    null,
-                    React.createElement(
-                        'ul',
-                        null,
-                        this.props.showItems.map(function (item) {
-                            return React.createElement(
-                                'div',
-                                null,
-                                React.createElement(
-                                    'li',
-                                    { key: item.id },
-                                    React.createElement(
-                                        'div',
-                                        null,
-                                        React.createElement(
-                                            'label',
-                                            null,
-                                            item.id,
-                                            ' ',
-                                            item.name
-                                        )
-                                    )
-                                )
-                            );
-                        })
-                    )
-                ),
-                React.createElement('br', null),
-                React.createElement('br', null),
-                React.createElement(
-                    'h3',
-                    { className: 'text-center' },
-                    '\u5F97\u7968\u6570\u91CF'
-                ),
-                React.createElement(
                     'div',
                     null,
                     React.createElement(
                         'ul',
                         null,
                         this.props.voteResults.map(function (item) {
+                            if (item.name == 'red') {
+                                item.name = '红色';
+                            }
+                            if (item.name == 'orange') {
+                                item.name = '橙色';
+                            }
+                            if (item.name == 'yellow') {
+                                item.name = '黄色';
+                            }
+                            if (item.name == 'green') {
+                                item.name = '绿色';
+                            }
+                            if (item.name == 'blue') {
+                                item.name = '蓝色';
+                            }
+                            if (item.name == 'purple') {
+                                item.name = '紫色';
+                            }
                             return React.createElement(
                                 'div',
                                 null,
@@ -17053,9 +17030,8 @@ var Container3 = function (_React$Component) {
                                         React.createElement(
                                             'label',
                                             null,
-                                            '\u9009\u9879: ',
-                                            item.voteNumber,
-                                            ' \u5F97\u7968\u6570\u91CF: ',
+                                            item.name,
+                                            '    \u5F97\u7968\u6570:',
                                             item.count
                                         )
                                     )

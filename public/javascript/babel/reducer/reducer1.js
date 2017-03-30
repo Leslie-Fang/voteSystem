@@ -16,33 +16,33 @@ var userData = [{
 
 var totalItems = [{
     id: 1,
-    name: 'apple',
-    link: "../../../images/apple.jpeg",
+    name: '红',
+    link: "../../../images/red.png",
     initChecked: true
 }, {
     id: 2,
-    name: 'banana',
-    link: "../../../images/banana.jpeg",
+    name: '橙',
+    link: "../../../images/oragon.png",
     initChecked: false
 }, {
     id: 3,
-    name: 'grape',
-    link: "../../../images/grape.jpeg",
+    name: '黄',
+    link: "../../../images/yellow.png",
     initChecked: false
 }, {
     id: 4,
-    name: 'origin',
-    link: "../../../images/origin.jpeg",
+    name: '绿',
+    link: "../../../images/green.png",
     initChecked: false
 }, {
     id: 5,
-    name: 'watermelon',
-    link: "../../../images/watermelon.jpeg",
+    name: '蓝',
+    link: "../../../images/blue.png",
     initChecked: false
 }, {
     id: 6,
-    name: 'pineapple',
-    link: "../../../images/pineapple.jpeg",
+    name: '紫',
+    link: "../../../images/zi.png",
     initChecked: false
 }];
 

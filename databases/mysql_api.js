@@ -86,7 +86,9 @@ exports.queryVotedornot=function(req, data,res,callback){
 exports.queryResult=function(req, data,res,callback){
     var connection = mysql.createConnection(config);
     connection.connect();
-    connection.query('select voteNumber,count(*) as count from VOTEDATA group by voteNumber', function(err, result) {
+    connection.query('select ci.name as name ,vd.voteNumber as voteNumber, count(*) as count from VOTEDATA as vd left join ' +
+        'coloritem as ci on vd.voteNumber=ci.id group by vd.voteNumber', function(err, result) {
+    //connection.query('select voteNumber,count(*) as count from VOTEDATA group by voteNumber', function(err, result) {
         if (err) {throw err;}
         else{
            // console.log(result.length);
