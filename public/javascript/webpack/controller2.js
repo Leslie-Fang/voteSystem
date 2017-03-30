@@ -16814,33 +16814,33 @@ var userData = [{
 
 var totalItems = [{
     id: 1,
-    name: 'apple',
-    link: "../../../images/apple.jpeg",
+    name: '红',
+    link: "../../../images/red.png",
     initChecked: true
 }, {
     id: 2,
-    name: 'banana',
-    link: "../../../images/banana.jpeg",
+    name: '橙',
+    link: "../../../images/oragon.png",
     initChecked: false
 }, {
     id: 3,
-    name: 'grape',
-    link: "../../../images/grape.jpeg",
+    name: '黄',
+    link: "../../../images/yellow.png",
     initChecked: false
 }, {
     id: 4,
-    name: 'origin',
-    link: "../../../images/origin.jpeg",
+    name: '绿',
+    link: "../../../images/green.png",
     initChecked: false
 }, {
     id: 5,
-    name: 'watermelon',
-    link: "../../../images/watermelon.jpeg",
+    name: '蓝',
+    link: "../../../images/blue.png",
     initChecked: false
 }, {
     id: 6,
-    name: 'pineapple',
-    link: "../../../images/pineapple.jpeg",
+    name: '紫',
+    link: "../../../images/zi.png",
     initChecked: false
 }];
 
@@ -17150,18 +17150,7 @@ var Component1 = exports.Component1 = function (_React$Component) {
                 React.createElement(
                     "h1",
                     { className: "text-center" },
-                    "\u4F60\u6700\u559C\u7231\u7684\u4E1C\u897F"
-                ),
-                React.createElement(
-                    "h5",
-                    null,
-                    "\u8BF7\u9009\u62E9",
-                    React.createElement(
-                        "strong",
-                        null,
-                        "\u4E00\u6837"
-                    ),
-                    "\u4F60\u6700\u559C\u6B22\u7684\u4E1C\u897F"
+                    "\u6295\u7968\u901A\u9053"
                 ),
                 React.createElement("br", null)
             );

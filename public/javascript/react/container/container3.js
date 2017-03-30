@@ -22,32 +22,33 @@ class Container3 extends React.Component {
     render() {
         return(
             <div>
-                <h3 className = "text-center">物品和编号</h3>
                 <div>
                     <ul>
-                        {this.props.showItems.map((item)=>{return(
-                            <div>
-                                <li key={item.id} >
-                                    <div>
-                                        <label>
-                                             {item.id} {item.name}
-                                        </label>
-                                    </div>
-                                </li>
-                            </div>
-                        )})}
-                    </ul>
-                </div>
-                <br/><br/>
-                <h3 className = "text-center">得票数量</h3>
-                <div>
-                    <ul>
-                        {this.props.voteResults.map((item)=>{return(
+                        {this.props.voteResults.map((item)=>{
+                            if(item.name == 'red'){
+                                item.name = '红色';
+                            }
+                            if(item.name == 'orange'){
+                                item.name = '橙色';
+                            }
+                            if(item.name == 'yellow'){
+                                item.name = '黄色';
+                            }
+                            if(item.name == 'green'){
+                                item.name = '绿色';
+                            }
+                            if(item.name == 'blue'){
+                                item.name = '蓝色';
+                            }
+                            if(item.name == 'purple'){
+                                item.name = '紫色';
+                            }
+                            return(
                             <div>
                                 <li>
                                     <div>
                                         <label>
-                                            选项: {item.voteNumber} 得票数量: {item.count}
+                                            {item.name}    得票数:{item.count}
                                         </label>
                                     </div>
                                 </li>

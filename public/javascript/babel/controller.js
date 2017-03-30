@@ -47,7 +47,7 @@ var Component1 = exports.Component1 = function (_React$Component) {
                 React.createElement(
                     "h1",
                     { className: "text-center" },
-                    "\u6295\u7968"
+                    "\u6295\u7968\u901A\u9053"
                 ),
                 React.createElement("img", { src: "../../images/logo.png", className: "img-responsive", alt: "Logo" })
             );
