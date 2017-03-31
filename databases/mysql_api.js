@@ -5,7 +5,7 @@ var config = require('../config.js').databases_config;
 exports.validate=function(req, data,res,callback){
     var connection = mysql.createConnection(config);
     connection.connect();
-    console.log(data);
+ //   console.log(data);
     connection.query('select * from VOTER where ID = ?',data, function(err, result) {
         if (err) throw err;
         if(result.length === 0) {
@@ -25,7 +25,7 @@ exports.validate=function(req, data,res,callback){
 exports.checkoutuniq=function(req, data,res,callback){
     var connection = mysql.createConnection(config);
     connection.connect();
-    console.log(data);
+  //  console.log(data);
     connection.query('select * from VOTEDATA where user = ?',data, function(err, result) {
         if (err) throw err;
         if(result.length === 0) {
@@ -46,14 +46,14 @@ exports.insertSelectItem=function(req, data,res,callback){
     var connection = mysql.createConnection(config);
     connection.connect();
     var user = req.cookies.user;
-    console.log(user);
-    console.log(data);
+ //   console.log(user);
+ //   console.log(data);
     var indata = [user,data];
-    console.log(indata);
+ //   console.log(indata);
     connection.query('insert into VOTEDATA(user,voteNumber) VALUES (?,?)',[user, data], function(err, result) {
         if (err) {throw err;}
         else{
-            console.log(result);
+         //   console.log(result);
            // res.cookie('voted', 1, {maxAge: 60*60*1000});
             callback({insert:'success'});
         }
@@ -69,8 +69,8 @@ exports.queryVotedornot=function(req, data,res,callback){
     var user = req.cookies.user;
     connection.query('select * from VOTEDATA where user = ?',user, function(err, result) {
         if (err) {throw err;}
-        console.log('UUUHHHHH');
-        console.log(result);
+      //  console.log('UUUHHHHH');
+      //  console.log(result);
         if(result.length === 0) {
             //the user hasn't voted
             callback({queryVoted:'fail'});
@@ -92,10 +92,10 @@ exports.queryResult=function(req, data,res,callback){
         if (err) {throw err;}
         else{
            // console.log(result.length);
-            console.log(result);
+           /* console.log(result);
             console.log(result.length);
             console.log(result[0]);
-            console.log(result[1]);
+            console.log(result[1]);*/
             callback(result);
         }
     });
