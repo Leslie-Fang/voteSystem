@@ -14,7 +14,9 @@ var Paths = {
     react_src:'public/javascript/react/**/*.js',
     react_dest:'public/javascript/babel',
     database_api_src:'databases/*.js',
-    css_src:'public/css/*.css'
+    css_src:'public/css/*.css',
+    controller_src:'public/javascript/webpack/**',
+    controller_dest:'public/javascript/controlleruglify'
 };
 
 gulp.task('routes',function(){
@@ -22,6 +24,13 @@ gulp.task('routes',function(){
         .pipe(uglify())
         .pipe(gulp.dest(Paths.routes_dest));
 });
+
+gulp.task('controller',function(){
+    gulp.src(Paths.controller_src)
+        .pipe(uglify())
+        .pipe(gulp.dest(Paths.controller_dest));
+});
+
 
 gulp.task('babel',function(){
     gulp.src(Paths.react_src)

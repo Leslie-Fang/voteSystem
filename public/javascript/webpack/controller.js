@@ -16986,33 +16986,39 @@ var userData = [{
 
 var totalItems = [{
     id: 1,
-    name: '红',
+    name: '第一位演唱歌手',
     link: "../../../images/red.png",
+    color: 'red',
     initChecked: true
 }, {
     id: 2,
-    name: '橙',
+    name: '第二位演唱歌手',
     link: "../../../images/oragon.png",
+    color: 'orange',
     initChecked: false
 }, {
     id: 3,
-    name: '黄',
+    name: '第三位演唱歌手',
     link: "../../../images/yellow.png",
+    color: 'yellow',
     initChecked: false
 }, {
     id: 4,
-    name: '绿',
+    name: '第四位演唱歌手',
     link: "../../../images/green.png",
+    color: 'green',
     initChecked: false
 }, {
     id: 5,
-    name: '蓝',
+    name: '第五位演唱歌手',
     link: "../../../images/blue.png",
+    color: 'blue',
     initChecked: false
 }, {
     id: 6,
-    name: '紫',
+    name: '第六位演唱歌手',
     link: "../../../images/zi.png",
+    color: 'purple',
     initChecked: false
 }];
 

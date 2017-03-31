@@ -16814,33 +16814,39 @@ var userData = [{
 
 var totalItems = [{
     id: 1,
-    name: '红',
+    name: '第一位演唱歌手',
     link: "../../../images/red.png",
+    color: 'red',
     initChecked: true
 }, {
     id: 2,
-    name: '橙',
+    name: '第二位演唱歌手',
     link: "../../../images/oragon.png",
+    color: 'orange',
     initChecked: false
 }, {
     id: 3,
-    name: '黄',
+    name: '第三位演唱歌手',
     link: "../../../images/yellow.png",
+    color: 'yellow',
     initChecked: false
 }, {
     id: 4,
-    name: '绿',
+    name: '第四位演唱歌手',
     link: "../../../images/green.png",
+    color: 'green',
     initChecked: false
 }, {
     id: 5,
-    name: '蓝',
+    name: '第五位演唱歌手',
     link: "../../../images/blue.png",
+    color: 'blue',
     initChecked: false
 }, {
     id: 6,
-    name: '紫',
+    name: '第六位演唱歌手',
     link: "../../../images/zi.png",
+    color: 'purple',
     initChecked: false
 }];
 
@@ -17039,16 +17045,14 @@ var Container2 = function (_React$Component) {
                                 { key: item.id },
                                 React.createElement(
                                     'div',
-                                    { className: 'radio' },
+                                    null,
                                     React.createElement(
                                         'label',
-                                        null,
+                                        { style: { color: item.color } },
                                         React.createElement('input', { type: 'radio', name: 'radio', id: item.id, index: item.id, defaultChecked: item.initChecked, onChange: _this2.handleChange }),
-                                        ' ',
                                         item.name
                                     )
                                 ),
-                                React.createElement('img', { src: item.link, className: 'img-responsive', alt: 'Logo' }),
                                 React.createElement('br', null),
                                 React.createElement('br', null)
                             )
