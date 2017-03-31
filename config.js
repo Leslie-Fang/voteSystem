@@ -1,5 +1,5 @@
 var dev_config = {
-    port:3000,
+    port:4000,
     databases_config:{
         host     : 'localhost',
         user     : 'sampadm',
