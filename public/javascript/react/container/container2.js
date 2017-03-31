@@ -55,15 +55,16 @@ class Container2 extends React.Component {
         return(
             <div>
                 <ul className="list-unstyled">
-                    {this.props.items.map((item,i)=>{return(
+                    {this.props.items.map((item,i)=>{
+                        return(
                         <div>
                             <li key={item.id} >
-                                <div className="radio">
-                                    <label>
-                                        <input type="radio" name="radio" id={item.id} index={item.id} defaultChecked={item.initChecked} onChange={this.handleChange}/> {item.name}
+                                <div>
+                                    <label style={{color:item.color}}>
+                                        <input type="radio" name="radio" id={item.id} index={item.id} defaultChecked={item.initChecked} onChange={this.handleChange}/>
+                                        {item.name}
                                     </label>
                                 </div>
-                                <img src={item.link} className="img-responsive" alt="Logo"/>
                                 <br/><br/>
                             </li>
                         </div>

@@ -94,16 +94,14 @@ var Container2 = function (_React$Component) {
                                 { key: item.id },
                                 React.createElement(
                                     'div',
-                                    { className: 'radio' },
+                                    null,
                                     React.createElement(
                                         'label',
-                                        null,
+                                        { style: { color: item.color } },
                                         React.createElement('input', { type: 'radio', name: 'radio', id: item.id, index: item.id, defaultChecked: item.initChecked, onChange: _this2.handleChange }),
-                                        ' ',
                                         item.name
                                     )
                                 ),
-                                React.createElement('img', { src: item.link, className: 'img-responsive', alt: 'Logo' }),
                                 React.createElement('br', null),
                                 React.createElement('br', null)
                             )

@@ -26,22 +26,22 @@ class Container3 extends React.Component {
                     <ul>
                         {this.props.voteResults.map((item)=>{
                             if(item.name == 'red'){
-                                item.name = '红色';
+                                item.name = '第一位演唱歌手';
                             }
                             if(item.name == 'orange'){
-                                item.name = '橙色';
+                                item.name = '第二位演唱歌手';
                             }
                             if(item.name == 'yellow'){
-                                item.name = '黄色';
+                                item.name = '第三位演唱歌手';
                             }
                             if(item.name == 'green'){
-                                item.name = '绿色';
+                                item.name = '第四位演唱歌手';
                             }
                             if(item.name == 'blue'){
-                                item.name = '蓝色';
+                                item.name = '第五位演唱歌手';
                             }
                             if(item.name == 'purple'){
-                                item.name = '紫色';
+                                item.name = '第六位演唱歌手';
                             }
                             return(
                             <div>
