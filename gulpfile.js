@@ -16,7 +16,7 @@ var Paths = {
     database_api_src:'databases/*.js',
     css_src:'public/css/*.css',
     controller_src:'public/javascript/webpack/**',
-    controller_dest:'public/javascript/react/controlleruglify'
+    controller_dest:'public/javascript/controlleruglify'
 };
 
 gulp.task('routes',function(){

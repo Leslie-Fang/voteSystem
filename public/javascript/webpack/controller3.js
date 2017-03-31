@@ -16814,33 +16814,39 @@ var userData = [{
 
 var totalItems = [{
     id: 1,
-    name: '红',
+    name: '第一位演唱歌手',
     link: "../../../images/red.png",
+    color: 'red',
     initChecked: true
 }, {
     id: 2,
-    name: '橙',
+    name: '第二位演唱歌手',
     link: "../../../images/oragon.png",
+    color: 'orange',
     initChecked: false
 }, {
     id: 3,
-    name: '黄',
+    name: '第三位演唱歌手',
     link: "../../../images/yellow.png",
+    color: 'yellow',
     initChecked: false
 }, {
     id: 4,
-    name: '绿',
+    name: '第四位演唱歌手',
     link: "../../../images/green.png",
+    color: 'green',
     initChecked: false
 }, {
     id: 5,
-    name: '蓝',
+    name: '第五位演唱歌手',
     link: "../../../images/blue.png",
+    color: 'blue',
     initChecked: false
 }, {
     id: 6,
-    name: '紫',
+    name: '第六位演唱歌手',
     link: "../../../images/zi.png",
+    color: 'purple',
     initChecked: false
 }];
 
@@ -17001,22 +17007,22 @@ var Container3 = function (_React$Component) {
                         null,
                         this.props.voteResults.map(function (item) {
                             if (item.name == 'red') {
-                                item.name = '红色';
+                                item.name = '第一位演唱歌手';
                             }
                             if (item.name == 'orange') {
-                                item.name = '橙色';
+                                item.name = '第二位演唱歌手';
                             }
                             if (item.name == 'yellow') {
-                                item.name = '黄色';
+                                item.name = '第三位演唱歌手';
                             }
                             if (item.name == 'green') {
-                                item.name = '绿色';
+                                item.name = '第四位演唱歌手';
                             }
                             if (item.name == 'blue') {
-                                item.name = '蓝色';
+                                item.name = '第五位演唱歌手';
                             }
                             if (item.name == 'purple') {
-                                item.name = '紫色';
+                                item.name = '第六位演唱歌手';
                             }
                             return React.createElement(
                                 'div',
