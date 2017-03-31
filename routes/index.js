@@ -4,7 +4,17 @@ var user = require('./user.js');
 var my=require('../databases/mysql_api');
 
 
+router.use(function(req,res,next){
+    var ip = req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress;
+    var url = req.url;
+  //  console.log(ip);
+    console.log('TIME：'+Date.now()+'; URL: '+url+"; IP"+ip);
+    next();
 
+});
 router.get('/',function(req,res){
 	res.render('main');
 });
@@ -20,8 +30,8 @@ router.use('/voter',function(req,res,next){
         next();
     }
     else{
-        console.log('Not login!');
-        console.log(req.cookies.islogin);
+       // console.log('Not login!');
+       // console.log(req.cookies.islogin);
         res.redirect('/');
     }
 });
@@ -36,11 +46,11 @@ router.get('/leave',function(req,res){
 
 
 router.post('/login', function(req, res, next) {
-    console.log(req.param('code'));
+   // console.log(req.param('code'));
     var data = req.param('code');
     my.validate(req,data,res,function(queryData){
-        console.log(queryData);
-        console.log('In callback!');
+       // console.log(queryData);
+       // console.log('In callback!');
         //didn't find the user return novoter
         if(queryData.state == 'novoter')
         {
@@ -53,12 +63,12 @@ router.post('/login', function(req, res, next) {
        // return res.send(queryData);
     });
 },function(req, res){
-    console.log('checkout again!');
-    console.log(req.param('code'));
+   // console.log('checkout again!');
+   // console.log(req.param('code'));
     var data = req.param('code');
     my.checkoutuniq(req,data,res,function(queryData){
-        console.log(queryData);
-        console.log('In callback!');
+    //    console.log(queryData);
+    //    console.log('In callback!');
         //didn't find the user return novoter
         return res.send(queryData);
     });
@@ -66,33 +76,33 @@ router.post('/login', function(req, res, next) {
 
 
 router.post('/submitItem', function(req, res) {
-    console.log(req.param('selectItem'));
+   // console.log(req.param('selectItem'));
     var data = req.param('selectItem');
     my.insertSelectItem(req,data,res,function(queryData){
-        console.log(queryData);
-        console.log('In callback!');
+     //   console.log(queryData);
+     //   console.log('In callback!');
         return res.send(queryData);
     });
 });
 
 
 router.post('/queryvotedornot', function(req, res) {
-    console.log(req.param('selectItem'));
+  //  console.log(req.param('selectItem'));
     var data = req.param('selectItem');
     my.queryVotedornot(req,data,res,function(queryData){
-        console.log(queryData);
-        console.log('In callback!');
+   //     console.log(queryData);
+   //     console.log('In callback!');
         return res.send(queryData);
     });
 });
 
 
 router.post('/queryresult', function(req, res) {
-    console.log(req.param('type'));
+ //   console.log(req.param('type'));
     var data = req.param('type');
     my.queryResult(req,data,res,function(queryData){
-        console.log(queryData);
-        console.log('In callback!');
+ //       console.log(queryData);
+ //       console.log('In callback!');
         return res.send(queryData);
     });
 });
