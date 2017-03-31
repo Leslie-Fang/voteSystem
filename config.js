@@ -1,5 +1,5 @@
 var dev_config = {
-    port:4000,
+    port:3000,
     databases_config:{
         host     : 'localhost',
         user     : 'sampadm',
@@ -16,4 +16,4 @@ var production_config = {
         database : 'express2react'
     }
 };
-module.exports = dev_config;
+module.exports = process.env.NODE_ENV === "production" ? production_config:dev_config;
