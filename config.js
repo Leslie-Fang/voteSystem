@@ -17,7 +17,7 @@ var production_config = {
     }
 };
 var docker_config = {
-    port:3388,
+    port:4000,
     databases_config:{
         host     : 'localhost',
         user     : 'sampadm',
