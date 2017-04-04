@@ -22,8 +22,8 @@ var docker_config = {
     port:4000,
     databases_config:{
         host     : '150.95.148.104',
-        user     : 'sampadm',
-        password : 'secret',
+        user     : 'root',
+        password : '123456',
         database : 'express2react',
         port: 3388
     }
