@@ -4,7 +4,8 @@ var dev_config = {
         host     : 'localhost',
         user     : 'sampadm',
         password : 'secret',
-        database : 'express2react'
+        database : 'express2react',
+        port: 3306
     }
 };
 var production_config = {
@@ -13,7 +14,8 @@ var production_config = {
         host     : 'localhost',
         user     : 'sampadm',
         password : 'secret',
-        database : 'express2react'
+        database : 'express2react',
+        port: 3306
     }
 };
 var docker_config = {
@@ -22,7 +24,8 @@ var docker_config = {
         host     : 'localhost',
         user     : 'sampadm',
         password : 'secret',
-        database : 'express2react'
+        database : 'express2react',
+        port: 3388
     }
 };
 
