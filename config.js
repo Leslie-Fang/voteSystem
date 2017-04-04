@@ -21,7 +21,7 @@ var production_config = {
 var docker_config = {
     port:4000,
     databases_config:{
-        host     : 'localhost',
+        host     : '150.95.148.104',
         user     : 'sampadm',
         password : 'secret',
         database : 'express2react',
